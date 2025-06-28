@@ -1,14 +1,14 @@
 # Déploiement du projet avec Docker
 
 1. Cloner le projet sur la machine cible :
-   git clone <url-du-repo>
+   git clone https://github.com/rassemm/projet-secu.git
    cd projet-secu-logicielle
 
 2. Vérifier que Docker et Docker Compose sont installés :
    docker --version
    docker-compose --version
 
-3. Construire et lancer les conteneurs (à la racine du projet) :
+3. Construire et lancer les conteneurs :
    docker-compose up --build
 
 4. Accéder à l'application :
@@ -17,17 +17,3 @@
 
 5. Arrêter les conteneurs :
    docker-compose down
-
-# Astuces
-- Pour voir les logs :
-  docker-compose logs -f
-- Pour relancer après modification :
-  docker-compose up --build
-
-# Variables importantes
-- Le frontend communique avec le backend via l'URL http://backend:5000/api (réseau Docker)
-- Les données SQLite sont stockées dans le volume du conteneur backend
-
-# (Optionnel) Nettoyer les images/volumes inutilisés :
-  docker system prune -af
-  docker volume prune -f 
